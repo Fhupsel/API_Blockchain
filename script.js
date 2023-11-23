@@ -1,8 +1,6 @@
-setInterval(valorBTC, 30000);
-
 function valorBTC(){
   const p = document.querySelector('p');
-  p.innerHTML = 'R$ ';
+  p.innerHTML = 'Valor: R$ ';
   const url = 'https://blockchain.info/ticker';
   const valor = fetch(url);
   valor.then(v => v.json())
@@ -12,4 +10,5 @@ function valorBTC(){
     p.innerHTML += valorCompra;
   })
 }
-
+valorBTC();
+setInterval(valorBTC, 30000);
